@@ -108,13 +108,43 @@ uvicorn app.api.main:app --reload
 
 # ...or the CLI:
 python -m app.cli
+
+# ...or Streamlit:
+streamlit run streamlit_app.py
 ```
+
+### Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub.
+2. Create an app at [share.streamlit.io](https://share.streamlit.io/), select
+  the repository, and set the main file to `streamlit_app.py`.
+3. Add `GROQ_API_KEY` in the app's **Settings > Secrets** as a TOML value:
+  `GROQ_API_KEY = "your-key"`.
+4. Include the PDFs you are allowed to deploy under `data/raw_pdfs/`, or
+  commit a generated FAISS index and metadata under `data/index/` and
+  `data/processed/`. The first startup downloads the embedding, reranker,
+  and NLI models and may take several minutes.
+
+The Streamlit app caches the pipeline for the lifetime of the worker and
+keeps conversation history in the browser session. Streamlit Cloud workers
+are ephemeral, so use a persistent database instead of the in-memory
+conversation store if conversation history must survive restarts or scale
+across multiple workers.
 
 The first run downloads the embedding, reranker, and NLI models from
 Hugging Face (a few hundred MB total) and builds the FAISS index — this
 can take a minute or two. Every subsequent start loads the persisted
 index straight from disk instead of rebuilding it (see
 [`FIXES.md` #2](FIXES.md)).
+
+### LLM Provider Selection
+
+This prototype uses Groq as its language-model provider because Groq offers
+free access suitable for development, demonstration, and initial evaluation.
+The provider, endpoint, model, timeout, and retry settings are environment-
+driven through `app/config.py`, so the implementation can be adapted to a
+different provider or a paid production deployment without changing the
+retrieval and verification pipeline.
 
 > **About the sample corpus.** `scripts/generate_sample_corpus.py`
 > generates five original PDFs (TS 38.331, 23.501, 24.501, 38.321, 33.501)
