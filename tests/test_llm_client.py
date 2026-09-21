@@ -15,7 +15,7 @@ class _FakeResponse:
 
     def raise_for_status(self):
         if self.status_code >= 400:
-            raise requests.HTTPError(f"status {self.status_code}")
+            raise requests.HTTPError(f"status {self.status_code}", response=self)
 
 
 def test_raises_config_error_when_api_key_missing(monkeypatch):
@@ -71,6 +71,20 @@ def test_raises_request_error_after_exhausting_retries(monkeypatch):
         assert False, "expected LLMRequestError"
     except LLMRequestError:
         pass
+
+
+def test_includes_non_retryable_http_response(monkeypatch):
+    monkeypatch.setattr(llm_client.settings, "groq_api_key", "fake-key")
+
+    def fake_post(*args, **kwargs):
+        return _FakeResponse(404, text="model not found")
+
+    monkeypatch.setattr(llm_client.requests, "post", fake_post)
+    try:
+        generate_answer("hello")
+        assert False, "expected LLMRequestError"
+    except LLMRequestError as exc:
+        assert "Groq API error 404: model not found" in str(exc)
 
 
 def test_malformed_response_shape_raises_request_error(monkeypatch):

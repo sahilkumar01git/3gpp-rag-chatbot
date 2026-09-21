@@ -104,6 +104,12 @@ def generate_answer(prompt: str, *, temperature: float = 0.0, max_tokens: int = 
     except _RetryableHTTPError as exc:
         logger.error("Groq API returned status %s after retries", exc.response.status_code)
         raise LLMRequestError(f"Groq API error {exc.response.status_code}: {exc.response.text[:300]}") from exc
+    except requests.HTTPError as exc:
+        response = exc.response
+        status_code = response.status_code if response is not None else "unknown"
+        response_text = response.text[:300] if response is not None else str(exc)
+        logger.error("Groq API returned status %s: %s", status_code, response_text)
+        raise LLMRequestError(f"Groq API error {status_code}: {response_text}") from exc
     except requests.RequestException as exc:
         logger.error("Groq API request failed: %s", exc)
         raise LLMRequestError(f"Failed to reach Groq API: {exc}") from exc

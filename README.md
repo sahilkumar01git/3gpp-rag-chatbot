@@ -222,7 +222,7 @@ the full list with inline comments. The ones most worth tuning:
 | `MIN_CONFIDENCE_SCORE` | 0.55 | Composite score gate per claim |
 | `ENABLE_RERANKER` / `ENABLE_NLI_VERIFIER` | true | Disable to fall back to FAISS ordering / embedding similarity only |
 | `MAX_HISTORY_TURNS` | 6 | Conversation turns kept per session |
-| `GROQ_MODEL` | `llama-3.1-8b-instant` | Any Groq-hosted chat model |
+| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Any Groq-hosted chat model |
 
 ## Evaluation
 
