@@ -30,7 +30,7 @@ class Settings(BaseSettings):
 
     # ── LLM provider (Groq) ────────────────────────────────────────────
     groq_api_key: str | None = Field(default=None)
-    groq_model: str = Field(default="llama-3.1-8b-instant")
+    groq_model: str = Field(default="openai/gpt-oss-20b")
     groq_endpoint: str = Field(default="https://api.groq.com/openai/v1/chat/completions")
     groq_timeout_seconds: int = Field(default=30)
     groq_max_retries: int = Field(default=3)

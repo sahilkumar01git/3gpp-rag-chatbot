@@ -119,7 +119,7 @@ streamlit run streamlit_app.py
 2. Create an app at [share.streamlit.io](https://share.streamlit.io/), select
   the repository, and set the main file to `streamlit_app.py`.
 3. Add these values in the app's **Settings > Secrets**:
-  `GROQ_API_KEY = "your-key"` and `GROQ_MODEL = "llama-3.1-8b-instant"`.
+  `GROQ_API_KEY = "your-key"` and `GROQ_MODEL = "openai/gpt-oss-20b"`.
   If `GROQ_MODEL` is already set to `llama-3.3-70b-versatile`, replace it or
   remove it because that model is not available to every Groq account.
 4. Include the PDFs you are allowed to deploy under `data/raw_pdfs/`, or
@@ -232,7 +232,7 @@ the full list with inline comments. The ones most worth tuning:
 | `MIN_CONFIDENCE_SCORE` | 0.55 | Composite score gate per claim |
 | `ENABLE_RERANKER` / `ENABLE_NLI_VERIFIER` | true | Disable to fall back to FAISS ordering / embedding similarity only |
 | `MAX_HISTORY_TURNS` | 6 | Conversation turns kept per session |
-| `GROQ_MODEL` | `llama-3.1-8b-instant` | Any Groq-hosted chat model available to your account |
+| `GROQ_MODEL` | `openai/gpt-oss-20b` | Any Groq-hosted chat model available to your account |
 
 ## Evaluation
 
