@@ -7,13 +7,17 @@ import uuid
 
 import streamlit as st
 
-if "GROQ_API_KEY" not in os.environ:
-    try:
-        groq_api_key = st.secrets.get("GROQ_API_KEY")
-    except Exception:
-        groq_api_key = None
-    if groq_api_key:
-        os.environ["GROQ_API_KEY"] = groq_api_key
+try:
+    streamlit_groq_api_key = st.secrets.get("GROQ_API_KEY")
+    streamlit_groq_model = st.secrets.get("GROQ_MODEL")
+except Exception:
+    streamlit_groq_api_key = None
+    streamlit_groq_model = None
+
+if "GROQ_API_KEY" not in os.environ and streamlit_groq_api_key:
+    os.environ["GROQ_API_KEY"] = streamlit_groq_api_key
+if "GROQ_MODEL" not in os.environ and streamlit_groq_model:
+    os.environ["GROQ_MODEL"] = streamlit_groq_model
 
 from app.generation.llm_client import LLMError
 from app.pipeline import RagPipeline

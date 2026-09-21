@@ -118,8 +118,10 @@ streamlit run streamlit_app.py
 1. Push this repository to GitHub.
 2. Create an app at [share.streamlit.io](https://share.streamlit.io/), select
   the repository, and set the main file to `streamlit_app.py`.
-3. Add `GROQ_API_KEY` in the app's **Settings > Secrets** as a TOML value:
-  `GROQ_API_KEY = "your-key"`.
+3. Add these values in the app's **Settings > Secrets**:
+  `GROQ_API_KEY = "your-key"` and `GROQ_MODEL = "llama-3.1-8b-instant"`.
+  If `GROQ_MODEL` is already set to `llama-3.3-70b-versatile`, replace it or
+  remove it because that model is not available to every Groq account.
 4. Include the PDFs you are allowed to deploy under `data/raw_pdfs/`, or
   commit a generated FAISS index and metadata under `data/index/` and
   `data/processed/`. The first startup downloads the embedding, reranker,
@@ -130,6 +132,14 @@ keeps conversation history in the browser session. Streamlit Cloud workers
 are ephemeral, so use a persistent database instead of the in-memory
 conversation store if conversation history must survive restarts or scale
 across multiple workers.
+
+### Streamlit Interface
+
+![3GPP RAG Chatbot Streamlit interface](streamlit-ui.png)
+
+The screenshot shows the verified local Streamlit interface before an API
+question is submitted. A configured Groq secret and an indexed corpus are
+required to run a complete question-and-answer flow.
 
 The first run downloads the embedding, reranker, and NLI models from
 Hugging Face (a few hundred MB total) and builds the FAISS index — this
@@ -222,7 +232,7 @@ the full list with inline comments. The ones most worth tuning:
 | `MIN_CONFIDENCE_SCORE` | 0.55 | Composite score gate per claim |
 | `ENABLE_RERANKER` / `ENABLE_NLI_VERIFIER` | true | Disable to fall back to FAISS ordering / embedding similarity only |
 | `MAX_HISTORY_TURNS` | 6 | Conversation turns kept per session |
-| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Any Groq-hosted chat model |
+| `GROQ_MODEL` | `llama-3.1-8b-instant` | Any Groq-hosted chat model available to your account |
 
 ## Evaluation
 
@@ -243,6 +253,24 @@ reports:
 - **Hallucination rate** — the fraction of out-of-scope/adversarial questions the bot answers instead of refusing (want this at or near 0%).
 
 Results are written to `eval/results/report.json` and `report.md`.
+
+### Offline Baseline Results
+
+The deterministic offline harness was run against the bundled five-document
+sample corpus on 21 September 2026:
+
+| Metric | Result |
+|---|---:|
+| Questions evaluated | 18 in-scope questions |
+| Recall@5 | 83.3% |
+| Mean Reciprocal Rank | 0.645 |
+| End-to-end generation metrics | Not measured in offline mode |
+
+These are retrieval-harness baseline results using the deterministic fake
+embedder. They are reproducible and useful for regression checks, but they
+do not represent live embedding, reranking, NLI, or Groq generation quality.
+Run the live evaluation with a configured `GROQ_API_KEY` and downloaded
+models before making production-quality claims.
 
 > `--offline` mode swaps in a deterministic bag-of-words fake embedder so
 > the harness can be smoke-tested with no network access at all — useful
