@@ -7,6 +7,11 @@ evidence isn't strong enough, the bot says so instead of guessing.
 This is a rebuild of an earlier prototype. See [`FIXES.md`](FIXES.md) for a
 point-by-point mapping from the original review findings to what changed.
 
+**Results (live, 4 October 2026):** on a 74-question held-out set, 93.1%
+answer coverage, 0.0% hallucination on adversarial questions, and MRR 0.78 →
+0.85 with reranking. The corpus is synthetic; see [`RESULTS.md`](RESULTS.md)
+for the full numbers, commands and caveats.
+
 ## Architecture
 
 ```mermaid
@@ -79,7 +84,7 @@ data/
 eval/
   eval_dataset.json      QA pairs (in-scope + adversarial) for evaluation
   run_eval.py             Retrieval + hallucination-rate evaluation harness
-tests/                   Unit + integration tests (44 tests, no network required)
+tests/                   Unit + integration tests (49 tests, no network required)
 scripts/
   generate_sample_corpus.py   Generates the synthetic demo PDF corpus
 ```
@@ -254,23 +259,29 @@ reports:
 
 Results are written to `eval/results/report.json` and `report.md`.
 
-### Offline Baseline Results
+### Live results
 
-The deterministic offline harness was run against the bundled five-document
-sample corpus on 21 September 2026:
+Run on 4 October 2026 with `openai/gpt-oss-20b` on Groq. Full numbers,
+ablations, commands and caveats are in [`RESULTS.md`](RESULTS.md); raw
+reports are in [`eval/published_results/`](eval/published_results/).
 
-| Metric | Result |
-|---|---:|
-| Questions evaluated | 18 in-scope questions |
-| Recall@5 | 83.3% |
-| Mean Reciprocal Rank | 0.645 |
-| End-to-end generation metrics | Not measured in offline mode |
+| Metric (full pipeline) | Held-out set (58 + 16 questions) | Original set (18 + 6 questions) |
+|---|---:|---:|
+| Keyword coverage | 93.1% | 88.9% |
+| Wrong refusals (answerable) | 6.9% | 11.1% |
+| Hallucination (adversarial) | 0.0% | 0.0% |
+| MRR, FAISS only → after reranking | 0.779 → 0.853 | 0.789 → 0.861 |
+| Avg latency | 1.87 s | 1.82 s |
 
-These are retrieval-harness baseline results using the deterministic fake
-embedder. They are reproducible and useful for regression checks, but they
-do not represent live embedding, reranking, NLI, or Groq generation quality.
-Run the live evaluation with a configured `GROQ_API_KEY` and downloaded
-models before making production-quality claims.
+A verifier fix on the same date cut wrong refusals on the original set from
+44.4% to 11.1%. The corpus is synthetic and the questions are small,
+self-written sets, so treat these as demo results, not a benchmark.
+
+To run the held-out set:
+
+```bash
+python -m eval.run_eval --dataset eval/heldout_dataset.json
+```
 
 > `--offline` mode swaps in a deterministic bag-of-words fake embedder so
 > the harness can be smoke-tested with no network access at all — useful
@@ -281,7 +292,7 @@ models before making production-quality claims.
 ## Testing
 
 ```bash
-pytest                    # 44 tests, fully offline (deterministic fakes for the ML models)
+pytest                    # 49 tests, fully offline (deterministic fakes for the ML models)
 pytest tests/ -v           # verbose
 pytest tests/test_confidence.py -v   # just the hallucination-gating logic
 ```
