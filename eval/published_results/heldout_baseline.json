@@ -1,0 +1,1799 @@
+{
+  "timestamp": "2026-10-03T23:51:43.217153+00:00",
+  "mode": "live",
+  "dataset": "heldout_dataset.json",
+  "retrieval": {
+    "top_k": 5,
+    "recall_at_k": 0.8793,
+    "mrr": 0.7793,
+    "n_questions": 58,
+    "details": [
+      {
+        "id": "h1",
+        "question": "Which network function terminates the NAS signalling coming from the UE?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 2,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h2",
+        "question": "Which function is in charge of forwarding user data in the 5G Core?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h3",
+        "question": "Through what kind of architecture do the 5G Core network functions interact with each other?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h4",
+        "question": "Which network function supplies QoS and charging-related policy rules to the AMF and SMF?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h5",
+        "question": "Which function stores subscription data in the 5G Core?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 5,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h6",
+        "question": "Which function keeps a registry of available NF instances so that they can discover each other?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h7",
+        "question": "With which function does the UDM cooperate to generate authentication credentials?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h8",
+        "question": "How many network slices can serve a UE at the same time through one registration?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h9",
+        "question": "Is the Slice Differentiator a mandatory part of the S-NSSAI?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h10",
+        "question": "What identifier is used to identify a Network Slice?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h11",
+        "question": "Which slice/service type has the standardized SST value 1?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.4"
+      },
+      {
+        "id": "h12",
+        "question": "What SST value is assigned to Massive IoT?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "h13",
+        "question": "Which standardized SST value is used for vehicle-to-everything communications?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "h14",
+        "question": "In which registration management state does the AMF hold no valid location or routing information for the UE?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "h15",
+        "question": "In which registration management state can the network reach the UE for paging?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "h16",
+        "question": "For which purposes does a UE use the registration procedure?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h17",
+        "question": "Which message does the AMF send back when it accepts a registration?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h18",
+        "question": "Under what condition does the UE acknowledge with REGISTRATION COMPLETE?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h19",
+        "question": "Which sides are able to initiate de-registration?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h20",
+        "question": "What does the UE indicate in the DEREGISTRATION REQUEST that it sends?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h21",
+        "question": "How should the UE reply to a DEREGISTRATION REQUEST sent by the AMF?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h22",
+        "question": "Which NAS timer supervises the de-registration procedure?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h23",
+        "question": "What is the default value of timer T3511?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 2,
+        "top_result": "TS 24.501 Clause Table@p2"
+      },
+      {
+        "id": "h24",
+        "question": "What is the retransmission limit associated with timer T3510?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h25",
+        "question": "What does the UE do if T3510 expires before it receives a response from the network?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause 5.3.13"
+      },
+      {
+        "id": "h26",
+        "question": "Which NAS message carries the authentication challenge to the UE?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h27",
+        "question": "What does the UE use to calculate its authentication response?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 2,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h28",
+        "question": "After an AUTHENTICATION REJECT, until when does the UE treat the USIM as invalid for 5GS services?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h29",
+        "question": "From which function does the AUSF request authentication vectors in 5G-AKA?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h30",
+        "question": "Where are the subscriber-specific keys used to derive authentication vectors stored?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h31",
+        "question": "Which shared anchor key do the UE and the network derive after a successful 5G-AKA run?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h32",
+        "question": "Which entity forwards the authentication challenge to the UE and verifies its response?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h33",
+        "question": "Which key sits at the root of the 5G key hierarchy?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h34",
+        "question": "From which key does the AMF derive K_AMF?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h35",
+        "question": "What is the parent key of K_gNB?",
+        "expected": "TS 33.501 Clause 6.2.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.2"
+      },
+      {
+        "id": "h36",
+        "question": "Which entities derive the key K_AUSF?",
+        "expected": "TS 33.501 Clause 6.2.2",
+        "found_at_rank": 2,
+        "top_result": "TS 33.501 Clause Table@p2"
+      },
+      {
+        "id": "h37",
+        "question": "Which NAS and Access Stratum keys are derived from K_AMF for a given registration?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h38",
+        "question": "For what reason may user plane integrity protection be disabled?",
+        "expected": "TS 33.501 Clause 5.9.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 5.9.2"
+      },
+      {
+        "id": "h39",
+        "question": "What are the four messages exchanged in the contention-based random access procedure?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h40",
+        "question": "What does the random access response grant to the UE?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h41",
+        "question": "Why does the two-step random access procedure exist?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h42",
+        "question": "What does each HARQ process maintain on its own?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "h43",
+        "question": "How does the receiver react when it detects a transport block error?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "h44",
+        "question": "Which modulation scheme is used at MCS index 27?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause Table@p2"
+      },
+      {
+        "id": "h45",
+        "question": "What is the modulation order for MCS index 9?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause Table@p2"
+      },
+      {
+        "id": "h46",
+        "question": "Which MCS index in the excerpt maps to QPSK?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause Table@p2"
+      },
+      {
+        "id": "h47",
+        "question": "In which RRC state does the UE keep its AS context so that it can resume the connection quickly?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "h48",
+        "question": "What does a UE do while it is in RRC_IDLE?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "h49",
+        "question": "Which signalling radio bearer does the RRCSetup message configure?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h50",
+        "question": "Which message from the UE completes RRC connection establishment?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h51",
+        "question": "How does the network respond when it cannot admit an RRC connection request?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h52",
+        "question": "Which failures cause the UE to start RRC connection re-establishment?",
+        "expected": "TS 38.331 Clause 5.3.13",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.13"
+      },
+      {
+        "id": "h53",
+        "question": "What must the UE have stored in order to initiate RRC connection re-establishment?",
+        "expected": "TS 38.331 Clause 5.3.13",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.13"
+      },
+      {
+        "id": "h54",
+        "question": "What is the default value of timer T310?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause Table@p2"
+      },
+      {
+        "id": "h55",
+        "question": "What event starts timer T311?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause Table@p2"
+      },
+      {
+        "id": "h56",
+        "question": "Which messages stop timer T300 when they are received?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.2"
+      },
+      {
+        "id": "h57",
+        "question": "Within what range can the network configure constant N311?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause Table@p2"
+      },
+      {
+        "id": "h58",
+        "question": "What does the constant N311 count?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.5"
+      }
+    ]
+  },
+  "retrieval_reranked": {
+    "top_k": 5,
+    "recall_at_k": 0.8793,
+    "mrr": 0.8534,
+    "n_questions": 58,
+    "details": [
+      {
+        "id": "h1",
+        "question": "Which network function terminates the NAS signalling coming from the UE?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h2",
+        "question": "Which function is in charge of forwarding user data in the 5G Core?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h3",
+        "question": "Through what kind of architecture do the 5G Core network functions interact with each other?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h4",
+        "question": "Which network function supplies QoS and charging-related policy rules to the AMF and SMF?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h5",
+        "question": "Which function stores subscription data in the 5G Core?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "h6",
+        "question": "Which function keeps a registry of available NF instances so that they can discover each other?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h7",
+        "question": "With which function does the UDM cooperate to generate authentication credentials?",
+        "expected": "TS 23.501 Clause 4.2.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.3"
+      },
+      {
+        "id": "h8",
+        "question": "How many network slices can serve a UE at the same time through one registration?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h9",
+        "question": "Is the Slice Differentiator a mandatory part of the S-NSSAI?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h10",
+        "question": "What identifier is used to identify a Network Slice?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "h11",
+        "question": "Which slice/service type has the standardized SST value 1?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.4"
+      },
+      {
+        "id": "h12",
+        "question": "What SST value is assigned to Massive IoT?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "h13",
+        "question": "Which standardized SST value is used for vehicle-to-everything communications?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "h14",
+        "question": "In which registration management state does the AMF hold no valid location or routing information for the UE?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "h15",
+        "question": "In which registration management state can the network reach the UE for paging?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "h16",
+        "question": "For which purposes does a UE use the registration procedure?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h17",
+        "question": "Which message does the AMF send back when it accepts a registration?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h18",
+        "question": "Under what condition does the UE acknowledge with REGISTRATION COMPLETE?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "h19",
+        "question": "Which sides are able to initiate de-registration?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h20",
+        "question": "What does the UE indicate in the DEREGISTRATION REQUEST that it sends?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h21",
+        "question": "How should the UE reply to a DEREGISTRATION REQUEST sent by the AMF?",
+        "expected": "TS 24.501 Clause 5.5.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.5.1"
+      },
+      {
+        "id": "h22",
+        "question": "Which NAS timer supervises the de-registration procedure?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h23",
+        "question": "What is the default value of timer T3511?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h24",
+        "question": "What is the retransmission limit associated with timer T3510?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h25",
+        "question": "What does the UE do if T3510 expires before it receives a response from the network?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "h26",
+        "question": "Which NAS message carries the authentication challenge to the UE?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h27",
+        "question": "What does the UE use to calculate its authentication response?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h28",
+        "question": "After an AUTHENTICATION REJECT, until when does the UE treat the USIM as invalid for 5GS services?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "h29",
+        "question": "From which function does the AUSF request authentication vectors in 5G-AKA?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h30",
+        "question": "Where are the subscriber-specific keys used to derive authentication vectors stored?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h31",
+        "question": "Which shared anchor key do the UE and the network derive after a successful 5G-AKA run?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h32",
+        "question": "Which entity forwards the authentication challenge to the UE and verifies its response?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "h33",
+        "question": "Which key sits at the root of the 5G key hierarchy?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h34",
+        "question": "From which key does the AMF derive K_AMF?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h35",
+        "question": "What is the parent key of K_gNB?",
+        "expected": "TS 33.501 Clause 6.2.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.2"
+      },
+      {
+        "id": "h36",
+        "question": "Which entities derive the key K_AUSF?",
+        "expected": "TS 33.501 Clause 6.2.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.2"
+      },
+      {
+        "id": "h37",
+        "question": "Which NAS and Access Stratum keys are derived from K_AMF for a given registration?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "h38",
+        "question": "For what reason may user plane integrity protection be disabled?",
+        "expected": "TS 33.501 Clause 5.9.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 5.9.2"
+      },
+      {
+        "id": "h39",
+        "question": "What are the four messages exchanged in the contention-based random access procedure?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h40",
+        "question": "What does the random access response grant to the UE?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h41",
+        "question": "Why does the two-step random access procedure exist?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "h42",
+        "question": "What does each HARQ process maintain on its own?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "h43",
+        "question": "How does the receiver react when it detects a transport block error?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "h44",
+        "question": "Which modulation scheme is used at MCS index 27?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "h45",
+        "question": "What is the modulation order for MCS index 9?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "h46",
+        "question": "Which MCS index in the excerpt maps to QPSK?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "h47",
+        "question": "In which RRC state does the UE keep its AS context so that it can resume the connection quickly?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "h48",
+        "question": "What does a UE do while it is in RRC_IDLE?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "h49",
+        "question": "Which signalling radio bearer does the RRCSetup message configure?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h50",
+        "question": "Which message from the UE completes RRC connection establishment?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h51",
+        "question": "How does the network respond when it cannot admit an RRC connection request?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "h52",
+        "question": "Which failures cause the UE to start RRC connection re-establishment?",
+        "expected": "TS 38.331 Clause 5.3.13",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.13"
+      },
+      {
+        "id": "h53",
+        "question": "What must the UE have stored in order to initiate RRC connection re-establishment?",
+        "expected": "TS 38.331 Clause 5.3.13",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.13"
+      },
+      {
+        "id": "h54",
+        "question": "What is the default value of timer T310?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.2"
+      },
+      {
+        "id": "h55",
+        "question": "What event starts timer T311?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.2"
+      },
+      {
+        "id": "h56",
+        "question": "Which messages stop timer T300 when they are received?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.2"
+      },
+      {
+        "id": "h57",
+        "question": "Within what range can the network configure constant N311?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.5"
+      },
+      {
+        "id": "h58",
+        "question": "What does the constant N311 count?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.5"
+      }
+    ]
+  },
+  "end_to_end": {
+    "keyword_coverage_rate": 0.931,
+    "answerable_refusal_rate": 0.069,
+    "hallucination_rate": 0.0,
+    "avg_latency_seconds": 1.873,
+    "in_scope_details": [
+      {
+        "id": "h1",
+        "question": "Which network function terminates the NAS signalling coming from the UE?",
+        "refused": false,
+        "confidence": 0.88,
+        "keywords_expected": [
+          "AMF"
+        ],
+        "keywords_found": [
+          "AMF"
+        ],
+        "fully_supported": true,
+        "answer": "The Access and Mobility Management Function (AMF) terminates the NAS signalling coming from the UE. [TS 23.501 v17.9.0, Clause 4.2.1 (Network functions overview), p.1]."
+      },
+      {
+        "id": "h2",
+        "question": "Which function is in charge of forwarding user data in the 5G Core?",
+        "refused": false,
+        "confidence": 0.9019,
+        "keywords_expected": [
+          "UPF"
+        ],
+        "keywords_found": [
+          "UPF"
+        ],
+        "fully_supported": true,
+        "answer": "The User Plane Function (UPF) is responsible for forwarding user data in the 5G Core. [TS 23.501 v17.9.0, Clause 4.2.1 (Network functions overview), p.1]."
+      },
+      {
+        "id": "h3",
+        "question": "Through what kind of architecture do the 5G Core network functions interact with each other?",
+        "refused": false,
+        "confidence": 0.8986,
+        "keywords_expected": [
+          "service-based"
+        ],
+        "keywords_found": [
+          "service-based"
+        ],
+        "fully_supported": true,
+        "answer": "The 5G Core network functions interact with each other through a service-based architecture. [TS 23.501 v17.9.0, Clause 4.2.1 (Network functions overview), p.1]."
+      },
+      {
+        "id": "h4",
+        "question": "Which network function supplies QoS and charging-related policy rules to the AMF and SMF?",
+        "refused": false,
+        "confidence": 0.9147,
+        "keywords_expected": [
+          "PCF"
+        ],
+        "keywords_found": [
+          "PCF"
+        ],
+        "fully_supported": true,
+        "answer": "The Policy Control Function (PCF) supplies QoS and charging-related policy rules to the AMF and SMF. [TS 23.501 v17.9.0, Clause 4.2.3 (Policy and data management functions), p.1]."
+      },
+      {
+        "id": "h5",
+        "question": "Which function stores subscription data in the 5G Core?",
+        "refused": true,
+        "confidence": 0.4079,
+        "keywords_expected": [
+          "UDM"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "h6",
+        "question": "Which function keeps a registry of available NF instances so that they can discover each other?",
+        "refused": false,
+        "confidence": 0.87,
+        "keywords_expected": [
+          "NRF"
+        ],
+        "keywords_found": [
+          "NRF"
+        ],
+        "fully_supported": true,
+        "answer": "The Network Repository Function (NRF) keeps a registry of available NF instances so that they can discover each other. [TS 23.501 v17.9.0, Clause 4.2.3 (Policy and data management functions), p.1]."
+      },
+      {
+        "id": "h7",
+        "question": "With which function does the UDM cooperate to generate authentication credentials?",
+        "refused": false,
+        "confidence": 0.8523,
+        "keywords_expected": [
+          "AUSF"
+        ],
+        "keywords_found": [
+          "AUSF"
+        ],
+        "fully_supported": true,
+        "answer": "The UDM cooperates with the Authentication Server Function (AUSF) to generate authentication credentials. [TS 23.501 v17.9.0, Clause 4.2.3 (Policy and data management functions), p.1]."
+      },
+      {
+        "id": "h8",
+        "question": "How many network slices can serve a UE at the same time through one registration?",
+        "refused": false,
+        "confidence": 0.8961,
+        "keywords_expected": [
+          "eight"
+        ],
+        "keywords_found": [
+          "eight"
+        ],
+        "fully_supported": true,
+        "answer": "A UE may be simultaneously served by up to eight Network Slices via a single registration. [TS 23.501 v17.9.0, Clause 5.15.3 (Network slicing), p.1]."
+      },
+      {
+        "id": "h9",
+        "question": "Is the Slice Differentiator a mandatory part of the S-NSSAI?",
+        "refused": true,
+        "confidence": 0.4581,
+        "keywords_expected": [
+          "optional"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "h10",
+        "question": "What identifier is used to identify a Network Slice?",
+        "refused": false,
+        "confidence": 0.9185,
+        "keywords_expected": [
+          "S-NSSAI"
+        ],
+        "keywords_found": [
+          "S-NSSAI"
+        ],
+        "fully_supported": true,
+        "answer": "The identifier used to identify a Network Slice is the Single Network Slice Selection Assistance Information (S-NSSAI), which consists of a Slice/Service Type (SST) and an optional Slice Differentiator (SD). [TS 23.501 v17.9.0, Clause 5.15.3 (Network slicing), p.1]."
+      },
+      {
+        "id": "h11",
+        "question": "Which slice/service type has the standardized SST value 1?",
+        "refused": false,
+        "confidence": 0.8914,
+        "keywords_expected": [
+          "eMBB"
+        ],
+        "keywords_found": [
+          "eMBB"
+        ],
+        "fully_supported": true,
+        "answer": "The standardized SST value 1 corresponds to the eMBB slice/service type. [TS 23.501 v17.9.0, Clause 5.15.4 (Standardized SST values), p.2]."
+      },
+      {
+        "id": "h12",
+        "question": "What SST value is assigned to Massive IoT?",
+        "refused": false,
+        "confidence": 0.8782,
+        "keywords_expected": [
+          "3"
+        ],
+        "keywords_found": [
+          "3"
+        ],
+        "fully_supported": true,
+        "answer": "The SST value assigned to Massive IoT is 3. [TS 23.501 v17.9.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h13",
+        "question": "Which standardized SST value is used for vehicle-to-everything communications?",
+        "refused": false,
+        "confidence": 0.7412,
+        "keywords_expected": [
+          "4"
+        ],
+        "keywords_found": [
+          "4"
+        ],
+        "fully_supported": true,
+        "answer": "The standardized SST value used for vehicle-to-everything (V2X) communications is 4. [TS 23.501 v17.9.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h14",
+        "question": "In which registration management state does the AMF hold no valid location or routing information for the UE?",
+        "refused": false,
+        "confidence": 0.929,
+        "keywords_expected": [
+          "RM-DEREGISTERED"
+        ],
+        "keywords_found": [
+          "RM-DEREGISTERED"
+        ],
+        "fully_supported": true,
+        "answer": "The AMF holds no valid location or routing information for the UE when the UE is in the RM-DEREGISTERED state. [TS 23.501 v17.9.0, Clause 8.2.1 (Registration management states), p.2]."
+      },
+      {
+        "id": "h15",
+        "question": "In which registration management state can the network reach the UE for paging?",
+        "refused": false,
+        "confidence": 0.9108,
+        "keywords_expected": [
+          "RM-REGISTERED"
+        ],
+        "keywords_found": [
+          "RM-REGISTERED"
+        ],
+        "fully_supported": true,
+        "answer": "The network can reach the UE for paging when the UE is in the RM-REGISTERED registration management state. [TS 23.501 v17.9.0, Clause 8.2.1 (Registration management states), p.2]."
+      },
+      {
+        "id": "h16",
+        "question": "For which purposes does a UE use the registration procedure?",
+        "refused": false,
+        "confidence": 0.9261,
+        "keywords_expected": [
+          "initial registration",
+          "periodic",
+          "emergency"
+        ],
+        "keywords_found": [
+          "initial registration",
+          "periodic",
+          "emergency"
+        ],
+        "fully_supported": true,
+        "answer": "The UE uses the registration procedure for initial registration, mobility registration update, periodic registration update, or emergency registration. [TS 24.501 v17.8.0, Clause 5.1.3 (Registration procedure), p.1]."
+      },
+      {
+        "id": "h17",
+        "question": "Which message does the AMF send back when it accepts a registration?",
+        "refused": false,
+        "confidence": 0.9298,
+        "keywords_expected": [
+          "REGISTRATION ACCEPT"
+        ],
+        "keywords_found": [
+          "REGISTRATION ACCEPT"
+        ],
+        "fully_supported": true,
+        "answer": "The AMF sends a REGISTRATION ACCEPT message. [TS 24.501 v17.8.0, Clause 5.1.3 (Registration procedure), p.1]."
+      },
+      {
+        "id": "h18",
+        "question": "Under what condition does the UE acknowledge with REGISTRATION COMPLETE?",
+        "refused": false,
+        "confidence": 0.9057,
+        "keywords_expected": [
+          "5G-GUTI"
+        ],
+        "keywords_found": [
+          "5G-GUTI"
+        ],
+        "fully_supported": true,
+        "answer": "The UE acknowledges with REGISTRATION COMPLETE if new 5G-GUTI or TAI list values were assigned. [TS 24.501 v17.8.0, Clause 5.1.3 (Registration procedure), p.1]."
+      },
+      {
+        "id": "h19",
+        "question": "Which sides are able to initiate de-registration?",
+        "refused": false,
+        "confidence": 0.8672,
+        "keywords_expected": [
+          "UE",
+          "network"
+        ],
+        "keywords_found": [
+          "UE",
+          "network"
+        ],
+        "fully_supported": true,
+        "answer": "Both the UE and the network can initiate de-registration. [TS 24.501 v17.8.0, Clause 5.5.1 (De-registration procedure), p.1]."
+      },
+      {
+        "id": "h20",
+        "question": "What does the UE indicate in the DEREGISTRATION REQUEST that it sends?",
+        "refused": false,
+        "confidence": 0.9051,
+        "keywords_expected": [
+          "switch off"
+        ],
+        "keywords_found": [
+          "switch off"
+        ],
+        "fully_supported": true,
+        "answer": "The UE indicates whether it wishes to switch off. [TS 24.501 v17.8.0, Clause 5.5.1 (De-registration procedure), p.1]."
+      },
+      {
+        "id": "h21",
+        "question": "How should the UE reply to a DEREGISTRATION REQUEST sent by the AMF?",
+        "refused": false,
+        "confidence": 0.886,
+        "keywords_expected": [
+          "DEREGISTRATION ACCEPT"
+        ],
+        "keywords_found": [
+          "DEREGISTRATION ACCEPT"
+        ],
+        "fully_supported": true,
+        "answer": "The UE shall reply with a DEREGISTRATION ACCEPT message, unless the switch-off indicator in the request makes an acknowledgement unnecessary. [TS 24.501 v17.8.0, Clause 5.5.1 (De-registration procedure), p.1]."
+      },
+      {
+        "id": "h22",
+        "question": "Which NAS timer supervises the de-registration procedure?",
+        "refused": false,
+        "confidence": 0.9216,
+        "keywords_expected": [
+          "T3521"
+        ],
+        "keywords_found": [
+          "T3521"
+        ],
+        "fully_supported": true,
+        "answer": "Timer T3521 supervises the de-registration procedure. [TS 24.501 v17.8.0, Clause 10.2 (NAS timers), p.2]."
+      },
+      {
+        "id": "h23",
+        "question": "What is the default value of timer T3511?",
+        "refused": false,
+        "confidence": 0.8826,
+        "keywords_expected": [
+          "10 seconds"
+        ],
+        "keywords_found": [
+          "10 seconds"
+        ],
+        "fully_supported": true,
+        "answer": "The default value of timer T3511 is 10 seconds [TS 24.501 v17.8.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h24",
+        "question": "What is the retransmission limit associated with timer T3510?",
+        "refused": false,
+        "confidence": 0.9119,
+        "keywords_expected": [
+          "5"
+        ],
+        "keywords_found": [
+          "5"
+        ],
+        "fully_supported": true,
+        "answer": "The retransmission limit associated with timer T3510 is 5 attempts [TS 24.501 v17.8.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h25",
+        "question": "What does the UE do if T3510 expires before it receives a response from the network?",
+        "refused": true,
+        "confidence": 0.3936,
+        "keywords_expected": [
+          "REGISTRATION REQUEST"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "h26",
+        "question": "Which NAS message carries the authentication challenge to the UE?",
+        "refused": true,
+        "confidence": 0.7119,
+        "keywords_expected": [
+          "AUTHENTICATION REQUEST"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "h27",
+        "question": "What does the UE use to calculate its authentication response?",
+        "refused": false,
+        "confidence": 0.8907,
+        "keywords_expected": [
+          "USIM"
+        ],
+        "keywords_found": [
+          "USIM"
+        ],
+        "fully_supported": true,
+        "answer": "The UE calculates its authentication response using its USIM. [TS 24.501 v17.8.0, Clause 5.4.1 (Authentication procedure), p.2]."
+      },
+      {
+        "id": "h28",
+        "question": "After an AUTHENTICATION REJECT, until when does the UE treat the USIM as invalid for 5GS services?",
+        "refused": false,
+        "confidence": 0.9291,
+        "keywords_expected": [
+          "switched off",
+          "removed"
+        ],
+        "keywords_found": [
+          "switched off",
+          "removed"
+        ],
+        "fully_supported": true,
+        "answer": "The UE shall consider the USIM invalid for 5GS services until the UE is switched off or the USIM is removed. [TS 24.501 v17.8.0, Clause 5.4.1 (Authentication procedure), p.2]."
+      },
+      {
+        "id": "h29",
+        "question": "From which function does the AUSF request authentication vectors in 5G-AKA?",
+        "refused": false,
+        "confidence": 0.9244,
+        "keywords_expected": [
+          "UDM"
+        ],
+        "keywords_found": [
+          "UDM"
+        ],
+        "fully_supported": true,
+        "answer": "The AUSF requests authentication vectors from the UDM. [TS 33.501 v17.7.0, Clause 0 (Front matter), p.1]."
+      },
+      {
+        "id": "h30",
+        "question": "Where are the subscriber-specific keys used to derive authentication vectors stored?",
+        "refused": false,
+        "confidence": 0.8603,
+        "keywords_expected": [
+          "ARPF"
+        ],
+        "keywords_found": [
+          "ARPF"
+        ],
+        "fully_supported": true,
+        "answer": "The subscriber-specific keys used to derive authentication vectors are stored in the ARPF. [TS 33.501 v17.7.0, Clause 0 (Front matter), p.1]."
+      },
+      {
+        "id": "h31",
+        "question": "Which shared anchor key do the UE and the network derive after a successful 5G-AKA run?",
+        "refused": false,
+        "confidence": 0.8779,
+        "keywords_expected": [
+          "K_SEAF"
+        ],
+        "keywords_found": [
+          "K_SEAF"
+        ],
+        "fully_supported": true,
+        "answer": "They derive the shared anchor key K_SEAF. [TS 33.501 v17.7.0, Clause 0 (Front matter), p.1]."
+      },
+      {
+        "id": "h32",
+        "question": "Which entity forwards the authentication challenge to the UE and verifies its response?",
+        "refused": false,
+        "confidence": 0.8854,
+        "keywords_expected": [
+          "SEAF"
+        ],
+        "keywords_found": [
+          "SEAF"
+        ],
+        "fully_supported": true,
+        "answer": "The SEAF forwards the authentication challenge to the UE via the AMF and verifies the UE's response before considering the subscriber authenticated. [TS 33.501 v17.7.0, Clause 0 (Front matter), p.1]."
+      },
+      {
+        "id": "h33",
+        "question": "Which key sits at the root of the 5G key hierarchy?",
+        "refused": false,
+        "confidence": 0.9009,
+        "keywords_expected": [
+          "long-term"
+        ],
+        "keywords_found": [
+          "long-term"
+        ],
+        "fully_supported": true,
+        "answer": "The root of the 5G key hierarchy is the long-term subscriber key K. [TS 33.501 v17.7.0, Clause 6.2.1 (Key hierarchy), p.1]."
+      },
+      {
+        "id": "h34",
+        "question": "From which key does the AMF derive K_AMF?",
+        "refused": false,
+        "confidence": 0.9074,
+        "keywords_expected": [
+          "K_SEAF"
+        ],
+        "keywords_found": [
+          "K_SEAF"
+        ],
+        "fully_supported": true,
+        "answer": "The AMF derives K_AMF from K_SEAF. [TS 33.501 v17.7.0, Clause 6.2.1 (Key hierarchy), p.1]."
+      },
+      {
+        "id": "h35",
+        "question": "What is the parent key of K_gNB?",
+        "refused": false,
+        "confidence": 0.8564,
+        "keywords_expected": [
+          "K_AMF"
+        ],
+        "keywords_found": [
+          "K_AMF"
+        ],
+        "fully_supported": true,
+        "answer": "The parent key of K_gNB is K_AMF. [TS 33.501 v17.7.0, Clause 6.2.2 (Key derivation summary), p.2]."
+      },
+      {
+        "id": "h36",
+        "question": "Which entities derive the key K_AUSF?",
+        "refused": false,
+        "confidence": 0.891,
+        "keywords_expected": [
+          "AUSF",
+          "UE"
+        ],
+        "keywords_found": [
+          "AUSF",
+          "UE"
+        ],
+        "fully_supported": true,
+        "answer": "The key K_AUSF is derived by the Authentication Server Function (AUSF) and the UE from the long-term subscriber key K. [TS 33.501 v17.7.0, Clause 6.2.2 (Key derivation summary), p.2]."
+      },
+      {
+        "id": "h37",
+        "question": "Which NAS and Access Stratum keys are derived from K_AMF for a given registration?",
+        "refused": false,
+        "confidence": 0.9217,
+        "keywords_expected": [
+          "K_NASint",
+          "K_NASenc",
+          "K_gNB"
+        ],
+        "keywords_found": [
+          "K_NASint",
+          "K_NASenc",
+          "K_gNB"
+        ],
+        "fully_supported": true,
+        "answer": "The NAS and Access Stratum keys that are derived from K_AMF for a given registration are: - K_NASint - K_NASenc - K_gNB These keys are derived from K_AMF as stated in the key hierarchy description. [TS 33.501 v17.7.0, Clause 6.2.1 (Key hierarchy), p.1]."
+      },
+      {
+        "id": "h38",
+        "question": "For what reason may user plane integrity protection be disabled?",
+        "refused": false,
+        "confidence": 0.9116,
+        "keywords_expected": [
+          "data rate"
+        ],
+        "keywords_found": [
+          "data rate"
+        ],
+        "fully_supported": true,
+        "answer": "User plane integrity protection may be disabled when the data rate exceeds a maximum data rate configured by the network, for performance reasons. [TS 33.501 v17.7.0, Clause 5.9.2 (User plane integrity protection), p.2]."
+      },
+      {
+        "id": "h39",
+        "question": "What are the four messages exchanged in the contention-based random access procedure?",
+        "refused": false,
+        "confidence": 0.8849,
+        "keywords_expected": [
+          "Msg1",
+          "Msg2",
+          "Msg3",
+          "Msg4"
+        ],
+        "keywords_found": [
+          "Msg1",
+          "Msg2",
+          "Msg3",
+          "Msg4"
+        ],
+        "fully_supported": true,
+        "answer": "The four messages exchanged in the contention-based random access procedure are: 1. Msg1 \u2013 Random access preamble (UE transmits) 2. Msg2 \u2013 Random access response (network grants uplink resources) 3. Msg3 \u2013 Scheduled message containing UE identity (UE transmits) 4. Msg4 \u2013 Contention resolution message (network resolves contention) [TS 38.321 v17.5.0, Clause 5.1.2 (Random access procedure), p.1]."
+      },
+      {
+        "id": "h40",
+        "question": "What does the random access response grant to the UE?",
+        "refused": false,
+        "confidence": 0.9001,
+        "keywords_expected": [
+          "uplink"
+        ],
+        "keywords_found": [
+          "uplink"
+        ],
+        "fully_supported": true,
+        "answer": "The random access response (Msg2) grants the UE uplink resources. [TS 38.321 v17.5.0, Clause 5.1.2 (Random access procedure), p.1]."
+      },
+      {
+        "id": "h41",
+        "question": "Why does the two-step random access procedure exist?",
+        "refused": false,
+        "confidence": 0.8827,
+        "keywords_expected": [
+          "latency"
+        ],
+        "keywords_found": [
+          "latency"
+        ],
+        "fully_supported": true,
+        "answer": "The two-step random access procedure exists to reduce latency by combining the preamble and Msg3 payload into a single MsgA transmission. [TS 38.321 v17.5.0, Clause 5.1.2 (Random access procedure), p.1]."
+      },
+      {
+        "id": "h42",
+        "question": "What does each HARQ process maintain on its own?",
+        "refused": false,
+        "confidence": 0.8616,
+        "keywords_expected": [
+          "buffer"
+        ],
+        "keywords_found": [
+          "buffer"
+        ],
+        "fully_supported": true,
+        "answer": "Each HARQ process maintains its own soft-combining buffer. [TS 38.321 v17.5.0, Clause 5.4.2 (HARQ operation), p.1]."
+      },
+      {
+        "id": "h43",
+        "question": "How does the receiver react when it detects a transport block error?",
+        "refused": false,
+        "confidence": 0.8361,
+        "keywords_expected": [
+          "HARQ feedback"
+        ],
+        "keywords_found": [
+          "HARQ feedback"
+        ],
+        "fully_supported": true,
+        "answer": "The receiver shall request retransmission via HARQ feedback rather than waiting for RLC-layer retransmission, in order to minimise latency. [TS 38.321 v17.5.0, Clause 5.4.2 (HARQ operation), p.1]."
+      },
+      {
+        "id": "h44",
+        "question": "Which modulation scheme is used at MCS index 27?",
+        "refused": false,
+        "confidence": 0.9335,
+        "keywords_expected": [
+          "256QAM"
+        ],
+        "keywords_found": [
+          "256QAM"
+        ],
+        "fully_supported": true,
+        "answer": "The modulation scheme used at MCS index 27 is 256QAM [TS 38.321 v17.5.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h45",
+        "question": "What is the modulation order for MCS index 9?",
+        "refused": false,
+        "confidence": 0.9297,
+        "keywords_expected": [
+          "4"
+        ],
+        "keywords_found": [
+          "4"
+        ],
+        "fully_supported": true,
+        "answer": "The modulation order for MCS index 9 is 4. [TS 38.321 v17.5.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h46",
+        "question": "Which MCS index in the excerpt maps to QPSK?",
+        "refused": false,
+        "confidence": 0.8023,
+        "keywords_expected": [
+          "0"
+        ],
+        "keywords_found": [
+          "0"
+        ],
+        "fully_supported": true,
+        "answer": "The MCS index that maps to QPSK is 0 [TS 38.321 v17.5.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h47",
+        "question": "In which RRC state does the UE keep its AS context so that it can resume the connection quickly?",
+        "refused": false,
+        "confidence": 0.9369,
+        "keywords_expected": [
+          "RRC_INACTIVE"
+        ],
+        "keywords_found": [
+          "RRC_INACTIVE"
+        ],
+        "fully_supported": true,
+        "answer": "The UE keeps its AS context in the RRC_INACTIVE state, allowing it to resume the connection with reduced signalling overhead. [TS 38.331 v17.6.0, Clause 4.2.1 (RRC states), p.1]."
+      },
+      {
+        "id": "h48",
+        "question": "What does a UE do while it is in RRC_IDLE?",
+        "refused": false,
+        "confidence": 0.9149,
+        "keywords_expected": [
+          "paging"
+        ],
+        "keywords_found": [
+          "paging"
+        ],
+        "fully_supported": true,
+        "answer": "In RRC_IDLE, the UE monitors paging and performs cell (re)selection but has no established RRC connection with any gNB. [TS 38.331 v17.6.0, Clause 4.2.1 (RRC states), p.1]."
+      },
+      {
+        "id": "h49",
+        "question": "Which signalling radio bearer does the RRCSetup message configure?",
+        "refused": false,
+        "confidence": 0.9135,
+        "keywords_expected": [
+          "SRB1"
+        ],
+        "keywords_found": [
+          "SRB1"
+        ],
+        "fully_supported": true,
+        "answer": "The RRCSetup message configures Signalling Radio Bearer 1 (SRB1). [TS 38.331 v17.6.0, Clause 5.3.3 (RRC connection establishment), p.1]."
+      },
+      {
+        "id": "h50",
+        "question": "Which message from the UE completes RRC connection establishment?",
+        "refused": false,
+        "confidence": 0.9212,
+        "keywords_expected": [
+          "RRCSetupComplete"
+        ],
+        "keywords_found": [
+          "RRCSetupComplete"
+        ],
+        "fully_supported": true,
+        "answer": "The UE completes the RRC connection establishment by sending an RRCSetupComplete message. [TS 38.331 v17.6.0, Clause 5.3.3 (RRC connection establishment), p.1]."
+      },
+      {
+        "id": "h51",
+        "question": "How does the network respond when it cannot admit an RRC connection request?",
+        "refused": false,
+        "confidence": 0.9276,
+        "keywords_expected": [
+          "RRCReject"
+        ],
+        "keywords_found": [
+          "RRCReject"
+        ],
+        "fully_supported": true,
+        "answer": "The network replies with an RRCReject message, and it may include a wait timer instructing the UE to refrain from re-attempting for a specified duration. [TS 38.331 v17.6.0, Clause 5.3.3 (RRC connection establishment), p.1]."
+      },
+      {
+        "id": "h52",
+        "question": "Which failures cause the UE to start RRC connection re-establishment?",
+        "refused": false,
+        "confidence": 0.9402,
+        "keywords_expected": [
+          "radio link failure",
+          "handover failure"
+        ],
+        "keywords_found": [
+          "radio link failure",
+          "handover failure"
+        ],
+        "fully_supported": true,
+        "answer": "The UE initiates RRC connection re-establishment when it detects any of the following failures, provided it has a stored AS security context and can find a suitable cell within the re-establishment timer T311: - radio link failure - handover failure - mobility from NR failure - integrity check failure - RRC connection reconfiguration failure [TS 38.331 v17.6.0, Clause 5.3.13 (RRC connection re-establishment), p.1]."
+      },
+      {
+        "id": "h53",
+        "question": "What must the UE have stored in order to initiate RRC connection re-establishment?",
+        "refused": false,
+        "confidence": 0.9423,
+        "keywords_expected": [
+          "AS security context"
+        ],
+        "keywords_found": [
+          "AS security context"
+        ],
+        "fully_supported": true,
+        "answer": "The UE must have a stored AS security context in order to initiate RRC connection re-establishment. [TS 38.331 v17.6.0, Clause 5.3.13 (RRC connection re-establishment), p.1]."
+      },
+      {
+        "id": "h54",
+        "question": "What is the default value of timer T310?",
+        "refused": false,
+        "confidence": 0.8863,
+        "keywords_expected": [
+          "2000 ms"
+        ],
+        "keywords_found": [
+          "2000 ms"
+        ],
+        "fully_supported": true,
+        "answer": "The default value of timer T310 is 2000 ms. [TS 38.331 v17.6.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "h55",
+        "question": "What event starts timer T311?",
+        "refused": false,
+        "confidence": 0.7971,
+        "keywords_expected": [
+          "re-establishment"
+        ],
+        "keywords_found": [
+          "re-establishment"
+        ],
+        "fully_supported": true,
+        "answer": "Timer T311 is started when the UE initiates the RRC connection re-establishment procedure. [TS 38.331 v17.6.0, Clause 5.3.13 (RRC connection re-establishment), p.1]."
+      },
+      {
+        "id": "h56",
+        "question": "Which messages stop timer T300 when they are received?",
+        "refused": false,
+        "confidence": 0.8428,
+        "keywords_expected": [
+          "RRCSetup",
+          "RRCReject"
+        ],
+        "keywords_found": [
+          "RRCSetup",
+          "RRCReject"
+        ],
+        "fully_supported": true,
+        "answer": "Timer T300 is stopped when the UE receives either an RRCSetup or an RRCReject message. [TS 38.331 v17.6.0, Clause 6.3.2 (Timers and constants (RRC)), p.2]."
+      },
+      {
+        "id": "h57",
+        "question": "Within what range can the network configure constant N311?",
+        "refused": false,
+        "confidence": 0.919,
+        "keywords_expected": [
+          "1 to 10"
+        ],
+        "keywords_found": [
+          "1 to 10"
+        ],
+        "fully_supported": true,
+        "answer": "The network can configure N311 within the range 1 to 10. [TS 38.331 v17.6.0, Clause 6.3.5 (Maximum values (RRC)), p.2]."
+      },
+      {
+        "id": "h58",
+        "question": "What does the constant N311 count?",
+        "refused": false,
+        "confidence": 0.8825,
+        "keywords_expected": [
+          "in-sync"
+        ],
+        "keywords_found": [
+          "in-sync"
+        ],
+        "fully_supported": true,
+        "answer": "N311 counts the number of consecutive in-sync indications required to stop T310. [TS 38.331 v17.6.0, Clause 6.3.5 (Maximum values (RRC)), p.2]."
+      }
+    ],
+    "adversarial_details": [
+      {
+        "id": "hadv1",
+        "question": "What is the default value of NAS timer T3512?",
+        "note": "Real NAS timer name that is absent from the corpus (T3510/T3511/T3521 are present).",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv2",
+        "question": "What SST value is standardized for High-Performance Machine-Type Communications?",
+        "note": "The corpus table stops at SST 4.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv3",
+        "question": "Which network function exposes 5G Core capabilities to external applications?",
+        "note": "NEF is not described in the corpus.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv4",
+        "question": "What is the default value of RRC timer T319?",
+        "note": "Real RRC timer absent from the corpus (T300/T310/T311 are present).",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv5",
+        "question": "How many HARQ processes does LTE FDD use in the downlink?",
+        "note": "LTE is not covered; tempts reuse of the NR figure of 16.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv6",
+        "question": "Which modulation scheme corresponds to MCS index 28?",
+        "note": "The excerpt only lists indices 0, 9, 16 and 27.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv7",
+        "question": "What is the valid range of constant N312?",
+        "note": "Only N310 and N311 are present.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv8",
+        "question": "From which key is K_UPint derived?",
+        "note": "User-plane keys are not in the corpus key hierarchy.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv9",
+        "question": "What is the 5QI value for conversational voice?",
+        "note": "QoS identifiers are not covered.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv10",
+        "question": "Which RRC message does the gNB send to command a handover?",
+        "note": "Handover signalling is not covered; only handover failure is mentioned.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv11",
+        "question": "Which subcarrier spacings are supported in frequency range 2?",
+        "note": "Physical-layer numerology is not covered.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv12",
+        "question": "How long is the default paging DRX cycle in RRC_IDLE?",
+        "note": "Paging is mentioned but no DRX cycle value is given.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv13",
+        "question": "Who wrote the novel Pride and Prejudice?",
+        "note": "Unrelated general knowledge.",
+        "refused": true,
+        "confidence": 0.043993569910526276,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv14",
+        "question": "What is the square root of 144?",
+        "note": "Unrelated arithmetic.",
+        "refused": true,
+        "confidence": 0.12794175744056702,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv15",
+        "question": "What is the maximum transmit power of a power class 3 UE?",
+        "note": "RF requirements are not covered.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "hadv16",
+        "question": "Which reference point connects the gNB to the UPF?",
+        "note": "Reference points are not named in the corpus.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      }
+    ]
+  }
+}

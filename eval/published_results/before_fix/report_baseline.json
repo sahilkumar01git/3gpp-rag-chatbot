@@ -1,0 +1,576 @@
+{
+  "timestamp": "2026-10-03T23:06:27.222563+00:00",
+  "mode": "live",
+  "retrieval": {
+    "top_k": 5,
+    "recall_at_k": 0.8889,
+    "mrr": 0.7889,
+    "n_questions": 18,
+    "details": [
+      {
+        "id": "q1",
+        "question": "What are the three RRC states a UE can be in?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "q2",
+        "question": "What message does the UE send to start RRC connection establishment?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "q3",
+        "question": "What is the default value of timer T300?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause Table@p2"
+      },
+      {
+        "id": "q4",
+        "question": "What is the valid range for constant N310?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 2,
+        "top_result": "TS 38.331 Clause Table@p2"
+      },
+      {
+        "id": "q5",
+        "question": "Which network function allocates IP addresses and selects the UPF?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "q6",
+        "question": "What does the abbreviation S-NSSAI stand for and what does it consist of?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "q7",
+        "question": "What SST value corresponds to URLLC?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 5,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "q8",
+        "question": "What are the two registration management states of a UE?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "q9",
+        "question": "What message does the UE send to the AMF to begin registration?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "q10",
+        "question": "What NAS timer supervises the registration procedure and what is its default value?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "q11",
+        "question": "What happens if the AUTHENTICATION RESPONSE from the UE does not match the expected value?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "q12",
+        "question": "How many parallel HARQ processes per serving cell does the MAC entity support?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "q13",
+        "question": "What is combined into a single MsgA transmission in the two-step random access procedure?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "q14",
+        "question": "Which two parameters bound how logical channel prioritization serves a channel before strict priority order applies?",
+        "expected": "TS 38.321 Clause 5.4.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "q15",
+        "question": "What modulation scheme corresponds to MCS index 16?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause Table@p2"
+      },
+      {
+        "id": "q16",
+        "question": "What key is K_SEAF derived from?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "q17",
+        "question": "Besides 5G-AKA, what other authentication method is standardized for the 5G System?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "q18",
+        "question": "Is user plane integrity protection between the UE and gNB mandatory to support?",
+        "expected": "TS 33.501 Clause 5.9.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 5.9.2"
+      }
+    ]
+  },
+  "retrieval_reranked": {
+    "top_k": 5,
+    "recall_at_k": 0.8889,
+    "mrr": 0.8611,
+    "n_questions": 18,
+    "details": [
+      {
+        "id": "q1",
+        "question": "What are the three RRC states a UE can be in?",
+        "expected": "TS 38.331 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 4.2.1"
+      },
+      {
+        "id": "q2",
+        "question": "What message does the UE send to start RRC connection establishment?",
+        "expected": "TS 38.331 Clause 5.3.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 5.3.3"
+      },
+      {
+        "id": "q3",
+        "question": "What is the default value of timer T300?",
+        "expected": "TS 38.331 Clause 6.3.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.2"
+      },
+      {
+        "id": "q4",
+        "question": "What is the valid range for constant N310?",
+        "expected": "TS 38.331 Clause 6.3.5",
+        "found_at_rank": 1,
+        "top_result": "TS 38.331 Clause 6.3.5"
+      },
+      {
+        "id": "q5",
+        "question": "Which network function allocates IP addresses and selects the UPF?",
+        "expected": "TS 23.501 Clause 4.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 4.2.1"
+      },
+      {
+        "id": "q6",
+        "question": "What does the abbreviation S-NSSAI stand for and what does it consist of?",
+        "expected": "TS 23.501 Clause 5.15.3",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 5.15.3"
+      },
+      {
+        "id": "q7",
+        "question": "What SST value corresponds to URLLC?",
+        "expected": "TS 23.501 Clause 5.15.4",
+        "found_at_rank": 2,
+        "top_result": "TS 23.501 Clause Table@p2"
+      },
+      {
+        "id": "q8",
+        "question": "What are the two registration management states of a UE?",
+        "expected": "TS 23.501 Clause 8.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 23.501 Clause 8.2.1"
+      },
+      {
+        "id": "q9",
+        "question": "What message does the UE send to the AMF to begin registration?",
+        "expected": "TS 24.501 Clause 5.1.3",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.1.3"
+      },
+      {
+        "id": "q10",
+        "question": "What NAS timer supervises the registration procedure and what is its default value?",
+        "expected": "TS 24.501 Clause 10.2",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 10.2"
+      },
+      {
+        "id": "q11",
+        "question": "What happens if the AUTHENTICATION RESPONSE from the UE does not match the expected value?",
+        "expected": "TS 24.501 Clause 5.4.1",
+        "found_at_rank": 1,
+        "top_result": "TS 24.501 Clause 5.4.1"
+      },
+      {
+        "id": "q12",
+        "question": "How many parallel HARQ processes per serving cell does the MAC entity support?",
+        "expected": "TS 38.321 Clause 5.4.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.2"
+      },
+      {
+        "id": "q13",
+        "question": "What is combined into a single MsgA transmission in the two-step random access procedure?",
+        "expected": "TS 38.321 Clause 5.1.2",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.1.2"
+      },
+      {
+        "id": "q14",
+        "question": "Which two parameters bound how logical channel prioritization serves a channel before strict priority order applies?",
+        "expected": "TS 38.321 Clause 5.4.3",
+        "found_at_rank": 1,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "q15",
+        "question": "What modulation scheme corresponds to MCS index 16?",
+        "expected": "TS 38.321 Clause Annex A",
+        "found_at_rank": null,
+        "top_result": "TS 38.321 Clause 5.4.3"
+      },
+      {
+        "id": "q16",
+        "question": "What key is K_SEAF derived from?",
+        "expected": "TS 33.501 Clause 6.2.1",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 6.2.1"
+      },
+      {
+        "id": "q17",
+        "question": "Besides 5G-AKA, what other authentication method is standardized for the 5G System?",
+        "expected": "TS 33.501 Clause 6.1.3",
+        "found_at_rank": null,
+        "top_result": "TS 33.501 Clause 0"
+      },
+      {
+        "id": "q18",
+        "question": "Is user plane integrity protection between the UE and gNB mandatory to support?",
+        "expected": "TS 33.501 Clause 5.9.2",
+        "found_at_rank": 1,
+        "top_result": "TS 33.501 Clause 5.9.2"
+      }
+    ]
+  },
+  "end_to_end": {
+    "keyword_coverage_rate": 0.5,
+    "answerable_refusal_rate": 0.4444,
+    "hallucination_rate": 0.0,
+    "avg_latency_seconds": 2.007,
+    "in_scope_details": [
+      {
+        "id": "q1",
+        "question": "What are the three RRC states a UE can be in?",
+        "refused": true,
+        "confidence": 0.3203,
+        "keywords_expected": [
+          "RRC_IDLE",
+          "RRC_INACTIVE",
+          "RRC_CONNECTED"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q2",
+        "question": "What message does the UE send to start RRC connection establishment?",
+        "refused": true,
+        "confidence": 0.5519,
+        "keywords_expected": [
+          "RRCSetupRequest"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q3",
+        "question": "What is the default value of timer T300?",
+        "refused": true,
+        "confidence": 0.4897,
+        "keywords_expected": [
+          "1000 ms"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q4",
+        "question": "What is the valid range for constant N310?",
+        "refused": false,
+        "confidence": 0.7369,
+        "keywords_expected": [
+          "1 to 20"
+        ],
+        "keywords_found": [
+          "1 to 20"
+        ],
+        "fully_supported": true,
+        "answer": "The valid range for constant **N310** is **1 to 20**\u30101\u3011\u30102\u3011 [TS 38.331 v17.6.0, Clause Table@p2 (Table), p.2]."
+      },
+      {
+        "id": "q5",
+        "question": "Which network function allocates IP addresses and selects the UPF?",
+        "refused": false,
+        "confidence": 0.8663,
+        "keywords_expected": [
+          "SMF",
+          "Session Management Function"
+        ],
+        "keywords_found": [
+          "SMF",
+          "Session Management Function"
+        ],
+        "fully_supported": true,
+        "answer": "The Session Management Function (SMF) allocates IP addresses and selects the UPF. [TS 23.501 v17.9.0, Clause 4.2.1 (Network functions overview), p.1]."
+      },
+      {
+        "id": "q6",
+        "question": "What does the abbreviation S-NSSAI stand for and what does it consist of?",
+        "refused": true,
+        "confidence": 0.29904502630233765,
+        "keywords_expected": [
+          "SST",
+          "SD",
+          "Slice Differentiator"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q7",
+        "question": "What SST value corresponds to URLLC?",
+        "refused": true,
+        "confidence": 0.442,
+        "keywords_expected": [
+          "2"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q8",
+        "question": "What are the two registration management states of a UE?",
+        "refused": false,
+        "confidence": 0.7391,
+        "keywords_expected": [
+          "RM-DEREGISTERED",
+          "RM-REGISTERED"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "The two registration management states of a UE are **RM\u2011DEREGISTERED** and **RM\u2011REGISTERED** [1]. [TS 23.501 v17.9.0, Clause 8.2.1 (Registration management states), p.2]."
+      },
+      {
+        "id": "q9",
+        "question": "What message does the UE send to the AMF to begin registration?",
+        "refused": false,
+        "confidence": 0.9332,
+        "keywords_expected": [
+          "REGISTRATION REQUEST"
+        ],
+        "keywords_found": [
+          "REGISTRATION REQUEST"
+        ],
+        "fully_supported": true,
+        "answer": "The UE sends a **REGISTRATION REQUEST** message to the AMF to begin registration. [TS 24.501 v17.8.0, Clause 5.1.3 (Registration procedure), p.1]."
+      },
+      {
+        "id": "q10",
+        "question": "What NAS timer supervises the registration procedure and what is its default value?",
+        "refused": true,
+        "confidence": 0.1796,
+        "keywords_expected": [
+          "T3510",
+          "15 seconds"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q11",
+        "question": "What happens if the AUTHENTICATION RESPONSE from the UE does not match the expected value?",
+        "refused": false,
+        "confidence": 0.8566,
+        "keywords_expected": [
+          "AUTHENTICATION REJECT"
+        ],
+        "keywords_found": [
+          "AUTHENTICATION REJECT"
+        ],
+        "fully_supported": true,
+        "answer": "If the AUTHENTICATION RESPONSE from the UE does not match the expected value, the network sends an AUTHENTICATION REJECT and the UE shall consider the USIM invalid for 5GS services until the UE is switched off or the USIM is removed. [TS 24.501 v17.8.0, Clause 5.4.1 (Authentication procedure), p.2]."
+      },
+      {
+        "id": "q12",
+        "question": "How many parallel HARQ processes per serving cell does the MAC entity support?",
+        "refused": true,
+        "confidence": 0.5463,
+        "keywords_expected": [
+          "16"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q13",
+        "question": "What is combined into a single MsgA transmission in the two-step random access procedure?",
+        "refused": false,
+        "confidence": 0.8615,
+        "keywords_expected": [
+          "preamble",
+          "Msg3"
+        ],
+        "keywords_found": [
+          "preamble",
+          "Msg3"
+        ],
+        "fully_supported": true,
+        "answer": "The two\u2011step random access procedure combines the random access preamble and the Msg3 payload into a single MsgA transmission. [TS 38.321 v17.5.0, Clause 5.1.2 (Random access procedure), p.1]."
+      },
+      {
+        "id": "q14",
+        "question": "Which two parameters bound how logical channel prioritization serves a channel before strict priority order applies?",
+        "refused": false,
+        "confidence": 0.8719,
+        "keywords_expected": [
+          "Prioritised Bit Rate",
+          "Bucket Size Duration"
+        ],
+        "keywords_found": [
+          "Prioritised Bit Rate",
+          "Bucket Size Duration"
+        ],
+        "fully_supported": true,
+        "answer": "The MAC entity first respects each logical channel\u2019s **Prioritised Bit Rate (PBR)** and **Bucket Size Duration (BSD)** before serving the remaining channels strictly by priority order. [TS 38.321 v17.5.0, Clause 5.4.3 (Logical channel prioritization), p.2]."
+      },
+      {
+        "id": "q15",
+        "question": "What modulation scheme corresponds to MCS index 16?",
+        "refused": false,
+        "confidence": 0.7986,
+        "keywords_expected": [
+          "64QAM"
+        ],
+        "keywords_found": [
+          "64QAM"
+        ],
+        "fully_supported": true,
+        "answer": "The modulation scheme for MCS index\u202f16 is **64QAM**\u30101\u3011\u30102\u3011 [TS 38.321 v17.5.0, Clause 5.4.3 (Logical channel prioritization), p.2]."
+      },
+      {
+        "id": "q16",
+        "question": "What key is K_SEAF derived from?",
+        "refused": false,
+        "confidence": 0.878,
+        "keywords_expected": [
+          "K_AUSF"
+        ],
+        "keywords_found": [
+          "K_AUSF"
+        ],
+        "fully_supported": true,
+        "answer": "K_SEAF is derived from K_AUSF. [TS 33.501 v17.7.0, Clause 6.2.2 (Key derivation summary), p.2]."
+      },
+      {
+        "id": "q17",
+        "question": "Besides 5G-AKA, what other authentication method is standardized for the 5G System?",
+        "refused": true,
+        "confidence": 0.5102,
+        "keywords_expected": [
+          "EAP-AKA"
+        ],
+        "keywords_found": [],
+        "fully_supported": false,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "q18",
+        "question": "Is user plane integrity protection between the UE and gNB mandatory to support?",
+        "refused": false,
+        "confidence": 0.9803,
+        "keywords_expected": [
+          "optional"
+        ],
+        "keywords_found": [
+          "optional"
+        ],
+        "fully_supported": true,
+        "answer": "User plane integrity protection between the UE and the gNB is optional to support and to activate. [TS 33.501 v17.7.0, Clause 5.9.2 (User plane integrity protection), p.2]."
+      }
+    ],
+    "adversarial_details": [
+      {
+        "id": "adv1",
+        "question": "What is the maximum flight altitude permitted for a UE served by a non-terrestrial network satellite?",
+        "note": "Plausible-sounding 3GPP-adjacent question with no answer in the sample corpus.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "adv2",
+        "question": "What is the capital of France?",
+        "note": "Entirely unrelated to 3GPP specifications.",
+        "refused": true,
+        "confidence": 0.032463762909173965,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "adv3",
+        "question": "What is the default value of timer T3502?",
+        "note": "A real-sounding 3GPP NAS timer name not present in this corpus \u2014 tests resistance to fabricating a plausible number.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "adv4",
+        "question": "How many antenna ports does a UE need to support 8-layer MIMO?",
+        "note": "Topically adjacent (NR PHY) but not covered by any document in this corpus.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "adv5",
+        "question": "What is the boiling point of water at sea level?",
+        "note": "Entirely unrelated general-knowledge question.",
+        "refused": true,
+        "confidence": 0.10420428216457367,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      },
+      {
+        "id": "adv6",
+        "question": "According to TS 38.331, what is the default value of timer T304?",
+        "note": "References a real clause-adjacent timer (mobility) that does not appear in this sample corpus, unlike T300/T310/T311 which do.",
+        "refused": true,
+        "confidence": 1.0,
+        "answer": "I couldn't find this information in the provided 3GPP specifications."
+      }
+    ]
+  }
+}
