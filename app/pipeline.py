@@ -22,6 +22,7 @@ from app.memory.conversation import conversation_store
 from app.retrieval.embedder import Embedder, SentenceTransformerEmbedder
 from app.retrieval.reranker import CrossEncoderReranker, RerankedChunk
 from app.retrieval.vector_store import RetrievedChunk, VectorStore, fingerprint_pdf_dir
+from app.tracing import traceable
 from app.verification.confidence import ClaimVerdict, verify_answer
 from app.verification.nli_verifier import NLIVerifier
 
@@ -63,10 +64,13 @@ class RagPipeline:
         fingerprint = f"{fingerprint}:{settings.embed_model_name}"
         self.vector_store.load_or_build(build_all_chunks, self.embedder, fingerprint, force_rebuild=force_rebuild)
 
-    def _retrieve_and_rerank(self, question: str) -> list[RerankedChunk]:
+    @traceable(run_type="retriever", name="retrieve")
+    def _retrieve(self, question: str) -> list[RetrievedChunk]:
         query_vector = self.embedder.encode([question])[0]
-        candidates: list[RetrievedChunk] = self.vector_store.search(query_vector, settings.retrieval_top_n)
+        return self.vector_store.search(query_vector, settings.retrieval_top_n)
 
+    @traceable(name="rerank")
+    def _rerank(self, question: str, candidates: list[RetrievedChunk]) -> list[RerankedChunk]:
         if not candidates:
             return []
 
@@ -86,6 +90,18 @@ class RagPipeline:
             for c in top
         ]
 
+    def _retrieve_and_rerank(self, question: str) -> list[RerankedChunk]:
+        return self._rerank(question, self._retrieve(question))
+
+    @traceable(run_type="llm", name="generate")
+    def _generate(self, prompt: str) -> str:
+        return generate_answer(prompt)
+
+    @traceable(name="verify")
+    def _verify(self, raw_answer: str, passages: list[RerankedChunk]):
+        return verify_answer(raw_answer, passages, self.embedder, self.nli_verifier)
+
+    @traceable(run_type="chain", name="rag_answer")
     def answer(self, question: str, session_id: str | None = None) -> AnswerResult:
         start = time.monotonic()
         question = question.strip()
@@ -121,12 +137,12 @@ class RagPipeline:
         prompt = build_prompt(question, passages, history, settings.max_history_turns)
 
         try:
-            raw_answer = generate_answer(prompt)
+            raw_answer = self._generate(prompt)
         except LLMError:
             logger.exception("LLM generation failed for question: %r", question)
             raise
 
-        verification = verify_answer(raw_answer, passages, self.embedder, self.nli_verifier)
+        verification = self._verify(raw_answer, passages)
         new_session_id = conversation_store.append_turn(session_id, question, verification.final_answer)
 
         return AnswerResult(

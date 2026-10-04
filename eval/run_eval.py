@@ -41,6 +41,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from app.config import settings
+from app.generation.llm_client import LLMRequestError
 from app.logging_config import configure_logging
 from app.pipeline import RagPipeline
 from app.retrieval.embedder import SentenceTransformerEmbedder
@@ -52,8 +53,8 @@ DATASET_PATH = EVAL_DIR / "eval_dataset.json"
 RESULTS_DIR = EVAL_DIR / "results"
 
 
-def load_dataset() -> dict:
-    return json.loads(DATASET_PATH.read_text(encoding="utf-8"))
+def load_dataset(path: Path = DATASET_PATH) -> dict:
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
 def _clause_matches(retrieved_clause: str, expected_clause: str) -> bool:
@@ -63,14 +64,21 @@ def _clause_matches(retrieved_clause: str, expected_clause: str) -> bool:
     return retrieved_clause == expected_clause
 
 
-def evaluate_retrieval(pipeline: RagPipeline, dataset: dict, top_k: int) -> dict:
+def evaluate_retrieval(pipeline: RagPipeline, dataset: dict, top_k: int, rerank: bool = False) -> dict:
+    """rerank=False scores the raw FAISS top-k. rerank=True scores the top-k
+    after the cross-encoder has reordered the FAISS top-N candidates, so the
+    two results show what the reranker contributes to ranking quality."""
     details = []
     hits = 0
     reciprocal_ranks = []
 
     for item in dataset["in_scope"]:
         query_vector = pipeline.embedder.encode([item["question"]])[0]
-        results = pipeline.vector_store.search(query_vector, top_n=top_k)
+        if rerank:
+            candidates = pipeline.vector_store.search(query_vector, top_n=settings.retrieval_top_n)
+            results = pipeline.reranker.rerank(item["question"], candidates, top_k) if candidates else []
+        else:
+            results = pipeline.vector_store.search(query_vector, top_n=top_k)
 
         rank = None
         for i, r in enumerate(results, start=1):
@@ -104,14 +112,30 @@ def evaluate_retrieval(pipeline: RagPipeline, dataset: dict, top_k: int) -> dict
     }
 
 
-def evaluate_end_to_end(pipeline: RagPipeline, dataset: dict) -> dict:
+def _answer_with_backoff(pipeline: RagPipeline, question: str, delay: float):
+    """Paces calls for providers with a low tokens-per-minute limit, and
+    waits out a 429 rather than aborting the whole run. The waits happen
+    outside pipeline.answer(), so they don't inflate the reported latency."""
+    if delay:
+        time.sleep(delay)
+    for attempt in range(5):
+        try:
+            return pipeline.answer(question)
+        except LLMRequestError as exc:
+            if "429" not in str(exc) or attempt == 4:
+                raise
+            logger.warning("Rate limited by the LLM provider — waiting 20s before retrying.")
+            time.sleep(20)
+
+
+def evaluate_end_to_end(pipeline: RagPipeline, dataset: dict, delay: float = 0.0) -> dict:
     in_scope_details = []
     keyword_hits = 0
     answerable_refusals = 0
     latencies = []
 
     for item in dataset["in_scope"]:
-        result = pipeline.answer(item["question"])
+        result = _answer_with_backoff(pipeline, item["question"], delay)
         latencies.append(result.latency_seconds)
         answer_lower = result.answer.lower()
         keywords_found = [kw for kw in item["gold_answer_keywords"] if kw.lower() in answer_lower]
@@ -137,7 +161,7 @@ def evaluate_end_to_end(pipeline: RagPipeline, dataset: dict) -> dict:
     adversarial_details = []
     hallucinations = 0
     for item in dataset["out_of_scope"]:
-        result = pipeline.answer(item["question"])
+        result = _answer_with_backoff(pipeline, item["question"], delay)
         latencies.append(result.latency_seconds)
         if not result.refused:
             hallucinations += 1
@@ -182,6 +206,16 @@ def write_report(report: dict) -> None:
         "",
     ]
 
+    if report.get("retrieval_reranked"):
+        rr = report["retrieval_reranked"]
+        lines += [
+            "## Retrieval metrics after reranking",
+            "",
+            f"- Recall@{rr['top_k']}: **{rr['recall_at_k']:.1%}**",
+            f"- Mean Reciprocal Rank: **{rr['mrr']:.3f}**",
+            "",
+        ]
+
     if report.get("end_to_end"):
         e2e = report["end_to_end"]
         lines += [
@@ -211,6 +245,8 @@ def main() -> None:
     parser.add_argument("--top-k", type=int, default=5, help="k for Recall@k / retrieval evaluation.")
     parser.add_argument("--skip-generation", action="store_true", help="Only run retrieval metrics (no LLM calls).")
     parser.add_argument("--offline", action="store_true", help="Use a deterministic fake embedder; skip generation entirely.")
+    parser.add_argument("--dataset", type=Path, default=DATASET_PATH, help="Eval dataset JSON (default: eval/eval_dataset.json).")
+    parser.add_argument("--delay", type=float, default=0.0, help="Seconds to wait between LLM questions (for low tokens-per-minute limits).")
     args = parser.parse_args()
 
     if args.offline:
@@ -227,12 +263,18 @@ def main() -> None:
         embedder = SentenceTransformerEmbedder.get_singleton(settings.embed_model_name)
 
     pipeline = RagPipeline(embedder=embedder)
-    dataset = load_dataset()
+    dataset = load_dataset(args.dataset)
 
     print(f"Loaded {len(dataset['in_scope'])} in-scope and {len(dataset['out_of_scope'])} out-of-scope eval questions.")
     print("Running retrieval evaluation ...")
     retrieval_metrics = evaluate_retrieval(pipeline, dataset, top_k=args.top_k)
     print(f"  Recall@{args.top_k}: {retrieval_metrics['recall_at_k']:.1%}   MRR: {retrieval_metrics['mrr']:.3f}")
+
+    reranked_metrics = None
+    if pipeline.reranker is not None:
+        print(f"Running retrieval evaluation after reranking (FAISS top-{settings.retrieval_top_n} -> cross-encoder top-{args.top_k}) ...")
+        reranked_metrics = evaluate_retrieval(pipeline, dataset, top_k=args.top_k, rerank=True)
+        print(f"  Recall@{args.top_k}: {reranked_metrics['recall_at_k']:.1%}   MRR: {reranked_metrics['mrr']:.3f}")
 
     end_to_end_metrics = None
     run_generation = not args.offline and not args.skip_generation
@@ -243,7 +285,7 @@ def main() -> None:
 
     if run_generation:
         print("\nRunning end-to-end generation + hallucination evaluation (this calls the Groq API for every question) ...")
-        end_to_end_metrics = evaluate_end_to_end(pipeline, dataset)
+        end_to_end_metrics = evaluate_end_to_end(pipeline, dataset, delay=args.delay)
         print(f"  Keyword coverage: {end_to_end_metrics['keyword_coverage_rate']:.1%}")
         print(f"  Answerable-question refusal rate: {end_to_end_metrics['answerable_refusal_rate']:.1%}")
         print(f"  Hallucination rate (out-of-scope): {end_to_end_metrics['hallucination_rate']:.1%}")
@@ -251,7 +293,9 @@ def main() -> None:
     report = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "mode": "offline (fake embedder, harness self-test)" if args.offline else "live",
+        "dataset": Path(args.dataset).name,
         "retrieval": retrieval_metrics,
+        "retrieval_reranked": reranked_metrics,
         "end_to_end": end_to_end_metrics,
     }
     write_report(report)

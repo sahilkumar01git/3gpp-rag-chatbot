@@ -19,6 +19,7 @@ pdfplumber>=0.11.0
 
 # ── Logging ──────────────────────────────────────────────────────────────
 python-json-logger>=2.0.7
+langsmith>=0.1.100              # optional tracing, off unless LANGSMITH_TRACING=true
 
 # ── Streamlit deployment ────────────────────────────────────────────────
 streamlit>=1.36.0
