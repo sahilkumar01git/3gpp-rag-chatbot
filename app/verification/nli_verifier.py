@@ -27,11 +27,42 @@ unavailable" and fall back to the embedding-similarity verifier instead
 from __future__ import annotations
 
 import logging
+import re
 import threading
 
 from app.retrieval.reranker import RerankedChunk
 
 logger = logging.getLogger(__name__)
+
+_PREMISE_SENTENCE_RE = re.compile(r"(?<=[.!?;])\s+")
+
+
+def _split_sentences(text: str) -> list[str]:
+    sentences = [s.strip() for s in _PREMISE_SENTENCE_RE.split(text) if s.strip()]
+    return sentences if len(sentences) > 1 else []
+
+
+def _table_rows(text: str) -> list[str]:
+    """Render a markdown table chunk as one 'Header: value; ...' statement
+    per row. An NLI model cannot read a raw pipe table — scored as one blob
+    it returns near-random entailment — but it can judge a single row."""
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip().startswith("|")]
+    if len(lines) < 3:
+        return []
+    cells = [[c.strip() for c in ln.strip("|").split("|")] for ln in lines]
+    header, body = cells[0], [r for r in cells[1:] if not all(set(c) <= set("-: ") for c in r)]
+    return ["; ".join(f"{h}: {v}" for h, v in zip(header, row)) + "." for row in body]
+
+
+def _premises(text: str) -> list[str]:
+    """NLI checkpoints are trained on single-sentence premises. Given a
+    whole multi-sentence passage they tend to answer "neutral" even when one
+    sentence states the claim outright, so a claim is scored against each
+    sentence (or table row) as well, and the best-supported one wins."""
+    rows = _table_rows(text)
+    if rows:
+        return rows
+    return [text] + _split_sentences(text)
 
 
 class NLIVerifier:
@@ -74,12 +105,13 @@ class NLIVerifier:
 
         import numpy as np
 
-        logits = model.predict([(passage.content, claim)])[0]
-        # Standard label order for cross-encoder/nli-* checkpoints.
-        exp = np.exp(logits - np.max(logits))
-        probs = exp / exp.sum()
-        contradiction, entailment, neutral = probs
-        return float(entailment)
+        premises = _premises(passage.content)
+        logits = np.asarray(model.predict([(premise, claim) for premise in premises]))
+        # Standard label order for cross-encoder/nli-* checkpoints:
+        # [contradiction, entailment, neutral].
+        exp = np.exp(logits - logits.max(axis=1, keepdims=True))
+        probs = exp / exp.sum(axis=1, keepdims=True)
+        return float(probs[:, 1].max())
 
     def best_entailment(self, claim: str, passages: list[RerankedChunk]) -> tuple[RerankedChunk | None, float | None]:
         """Score `claim` against every candidate passage and return the
